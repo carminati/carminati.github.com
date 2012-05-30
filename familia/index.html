@@ -1,0 +1,16 @@
+---
+layout: default
+title: Familia
+section: familia
+---
+{% for post in site.categories.familia %}
+				<div class="content-title">{{ post.nome }}</div>
+				<!-- BEGIN POST CONTENT -->
+{{ post.content | truncate: 450 }}<br />
+				<a id="more" href="{{ post.url }}">Continua &raquo;</a>
+				<!-- END POST CONTENT -->
+				<div class="details">
+				  <p>&mdash; {{ post.byline }} on {{ post.date | date_to_long_string }} &bull; <a href="{{ post.url }}">permalink</a><br /></p>
+				</div>
+				<div class="clear"></div>
+{% endfor %}

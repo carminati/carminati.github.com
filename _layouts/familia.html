@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<h2 class='center'>{{ page.nome }}</h2>
+
+{{ content }}
+
+{{ page.nascimento }} <br />
+{{ page.sexo }} <br />
+<br />
+{{ page.pai | capitalize }} <br />
+{{ page.mae | capitalize }} <br />
+
+{% assign len = 0 %}
+{% for t in page.irmaos %}{% assign len = forloop.length %}{% endfor %}
+{% if len > 0 %}
+<div class="meta" align="left">  
+Irmãos:
+<ul class="irmaos">
+    {% for t in page.irmaos %}<li>{{ t }}</li>
+    {% if forloop.last == false %}{% endif %}
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+
+<div class="clear"></div>

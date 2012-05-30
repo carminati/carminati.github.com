@@ -1,0 +1,25 @@
+---
+layout: default
+section: home
+title: Carminati
+---
+{% include content-index.mdwn %}
+				<div class="clear"></div>
+				<br />
+
+{% assign first_post = site.categories.familia.first %}
+				<div id="post">
+					<h2><a href="{{ first_post.url }}">{{ first_post.title }}</a></h2>
+					{{ first_post.content | truncate: 450 }}<br />
+					<a id="more" href="{{ first_post.url }}">Continuar &raquo;</a>
+				</div>
+
+				<div class="clear"></div>
+				<br />
+
+{% for post in site.categories.familia %}
+				<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+
+				<div class="clear"></div>
+				<br />

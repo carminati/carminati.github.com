@@ -1,0 +1,19 @@
+{% include header-doc.html %}
+	<title>{{ page.title }}</title>
+{% include header-page.html %}
+	<div id="menu">
+		<ul id="menu">
+{% include menu-top-core.html %}
+		</ul>
+	</div>
+	
+	<div id="primary">
+		<div class="inside">
+			<div class="content">
+				<!-- BEGIN MAIN CONTENT -->
+{{ content }}
+				<!-- END MAIN CONTENT -->
+			</div>
+		</div>
+	
+{% include footer.html %}

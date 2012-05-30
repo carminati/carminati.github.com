@@ -1,0 +1,7 @@
+---
+title: Historia
+layout: default
+permalink: /historia/
+section: historia
+---
+<div class="centerbig">Teste</div>

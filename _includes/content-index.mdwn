@@ -1,0 +1,4 @@
+					<div id="content-menu">
+						<p>Welcome to my place, this is where you can find about my projects and I will try to write about my findings with almost anything related to programming. Also I will try to make this a kind of blog that can have content in english, portuguese and maybe french!</p>
+						<div class="clear"></div>
+					</div>
