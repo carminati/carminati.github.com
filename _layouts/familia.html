@@ -2,15 +2,44 @@
 layout: default
 ---
 
-<h2 class='center'>{{ page.nome }}</h2>
+<script>
+function url(str) {
+	display = str.replace(/(\ [a-z])/g, function($1){return $1.toUpperCase();}).replace(/(.)/, function($1){return $1.toUpperCase();});
+	return document.write('<a href="/familia/' + str.toLowerCase().replace(/ /g, '-') + '">' + display + '</a>');
+}
+</script>
+
+<h2 class='center'><script>cap('{{ page.nome }}');</script></h2>
+
+{% if page.sexo == 'F' or page.sexo == 'f' %}
+	{% assign s = 'a' %}
+	{% assign ns = 'o' %}
+	{% assign gender = 'Feminino' %}
+{% else %}
+	{% assign s = 'o' %}
+	{% assign ns = 'a' %}
+	{% assign gender = 'Masculino' %}
+{% endif  %}
+
 
 {{ content }}
 
-{{ page.nascimento }} <br />
-{{ page.sexo }} <br />
+Nascimento: {{ page.nascimento }}<br />
+{% if page.obito %}
+Obito: {{ page.obito }}<br />
+{% endif %}
+
+Sexo: {{ gender }}<br />
+
 <br />
-{{ page.pai | capitalize }} <br />
-{{ page.mae | capitalize }} <br />
+
+{% if page.conjuge %}
+Casad{{ s }} com <script>url('{{ page.conjuge }}');</script><br />
+<br />
+{% endif %}
+
+Pai: <script>url('{{ page.pai}}');</script><br />
+Mãe: <script>url('{{ page.mae }}');</script><br />
 
 {% assign len = 0 %}
 {% for t in page.irmaos %}{% assign len = forloop.length %}{% endfor %}
@@ -18,7 +47,7 @@ layout: default
 <div class="meta" align="left">  
 Irmãos:
 <ul class="irmaos">
-    {% for t in page.irmaos %}<li>{{ t }}</li>
+    {% for t in page.irmaos %}<li><script>url('{{ t }}');</script></li>
     {% if forloop.last == false %}{% endif %}
     {% endfor %}
 </ul>
