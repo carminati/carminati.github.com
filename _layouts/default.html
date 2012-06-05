@@ -1,19 +1,31 @@
-{% include header-doc.html %}
-	<title>{{ page.title }}</title>
-{% include header-page.html %}
-	<div id="menu">
-		<ul id="menu">
-{% include menu-top-core.html %}
-		</ul>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/2000/REC-xhtml1-20000126/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<title>Familia Carminati - {{ page.title }}</title> 
+	<link rel="stylesheet" href="/includes/style.css" type="text/css" media="screen, projection" />
+</head> 
+
+<body>
+	<br />
+	<h2>Familia Carminati</h2>
+	<br />
+
+	<div id="left">
+		<div id="escudo"><img src="http://a6.sphotos.ak.fbcdn.net/hphotos-ak-snc7/419381_326113597427863_316557635050126_877870_433099240_n.jpg" alt="" border="0" /></div>
+		<div id="menu">
+			<ul>
+{% include menu.html %}
+			</ul>
+		</div>
+	</div>
+
+	<div id="content">
+{{ content }}
 	</div>
 	
-	<div id="primary">
-		<div class="inside">
-			<div class="content">
-				<!-- BEGIN MAIN CONTENT -->
-{{ content }}
-				<!-- END MAIN CONTENT -->
-			</div>
-		</div>
-	
-{% include footer.html %}
+	<h1></h1>
+
+</body>
+</html>
+

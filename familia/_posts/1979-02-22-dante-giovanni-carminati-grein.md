@@ -11,12 +11,4 @@ irmaos:
 permalink: /familia/dante-giovanni-carminati-grein
 ---
 
-Info
-Info
-Info
-Info
-Info
-Info
-Info
-Info
-Info
+Outras informações...

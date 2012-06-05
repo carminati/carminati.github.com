@@ -1,0 +1,7 @@
+---
+title: Links
+layout: default
+permalink: /links/
+section: links
+---
+<div class="centerbig">Teste</div>

@@ -21,37 +21,58 @@ function url(str) {
 	{% assign gender = 'Masculino' %}
 {% endif  %}
 
-
-{{ content }}
-
-Nascimento: {{ page.nascimento }}<br />
-{% if page.obito %}
-Obito: {{ page.obito }}<br />
-{% endif %}
-
-Sexo: {{ gender }}<br />
-
-<br />
-
-{% if page.conjuge %}
-Casad{{ s }} com <script>url('{{ page.conjuge }}');</script><br />
-<br />
-{% endif %}
-
-Pai: <script>url('{{ page.pai}}');</script><br />
-Mãe: <script>url('{{ page.mae }}');</script><br />
+{% if page.foto %}<div id="picture"><img src='{{ page.foto }}'></div><br />{% endif %}
+<div id="info">
+<ul>
+{% if page.nascimento %}<li>Nascimento: {{ page.nascimento }}</li>{% endif %}
+{% if page.obito %}<li>Obito: {{ page.obito }}</li>{% endif %}
+{% if page.sexo %}<li>Sexo: {{ gender }}</li>{% endif %}
+{% if page.origem %}<li>Origem: <a href='https://maps.google.com/?q={{ page.origem }}' target='_blank'>{{ page.origem }}</a></li>{% endif %}
+{% if page.conjuge %}<li>Casad{{ s }} com <script>url('{{ page.conjuge }}');</script></li>{% endif %}
+{% if page.pai %}<li>Pai: <script>url('{{ page.pai}}');</script></li>{% endif %}
+{% if page.mae %}<li>Mãe: <script>url('{{ page.mae }}');</script></li>{% endif %}
 
 {% assign len = 0 %}
 {% for t in page.irmaos %}{% assign len = forloop.length %}{% endfor %}
 {% if len > 0 %}
-<div class="meta" align="left">  
-Irmãos:
-<ul class="irmaos">
-    {% for t in page.irmaos %}<li><script>url('{{ t }}');</script></li>
-    {% if forloop.last == false %}{% endif %}
-    {% endfor %}
-</ul>
-</div>
+<li>Irmãos:
+	<ul>
+	    {% for t in page.irmaos %}<li><script>url('{{ t }}');</script></li>
+	    {% if forloop.last == false %}{% endif %}
+	    {% endfor %}
+	</ul>
+</li>
 {% endif %}
 
-<div class="clear"></div>
+{% assign len = 0 %}
+{% for t in page.filhos %}{% assign len = forloop.length %}{% endfor %}
+{% if len > 0 %}
+<li>Filhos:
+	<ul>
+	    {% for t in page.filhos %}<li><script>url('{{ t }}');</script></li>
+	    {% if forloop.last == false %}{% endif %}
+	    {% endfor %}
+	</ul>
+</li>
+{% endif %}
+
+{% assign len = 0 %}
+{% for t in page.exconjuges %}{% assign len = forloop.length %}{% endfor %}
+{% if len > 0 %}
+<li>Ex-conjuges:
+	<ul>
+	    {% for t in page.exconjuges %}<li><script>url('{{ t }}');</script></li>
+	    {% if forloop.last == false %}{% endif %}
+	    {% endfor %}
+	</ul>
+</li>
+{% endif %}
+
+</ul>
+</div>
+
+<div class="clear"></div><br />
+
+<div id="bio">
+{{ content }}
+</div>

@@ -13,12 +13,12 @@ irmaos:
 permalink: /familia/danny-angelo-carminati-grein
 ---
 
-Info
-Info
-Info
-Info
-Info
-Info
-Info
-Info
-Info
+Escrever detalhes.
+
+Biografia.
+
+Fotos.
+
+Registros.
+
+
